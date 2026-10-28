@@ -9,4 +9,4 @@
 | [docs/README.md](docs/README.md) | 技术文档索引（方案正文在 docs/官网方案.md） |
 | [tasks/lessons.md](tasks/lessons.md) | 经验与踩坑 |
 
-独立项目，无母项目；未建 Git 仓库。
+独立项目，无母项目。Git 仓库：github.com/TIAN7077/zszsgw（main 分支）。

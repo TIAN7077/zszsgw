@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>中数智算新官网方案（草案）</title>
+<style>
+:root{
+  --blue:#155a9e;
+  --blue-dark:#0f4378;
+  --orange:#e8721a;
+  --ink:#26313d;
+  --muted:#6b7684;
+  --line:#dde4ec;
+  --soft:#f4f7fb;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;
+  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;
+  font-size:16px;
+  line-height:1.85;
+  color:var(--ink);
+  background:#fff;
+}
+.copy-note{
+  padding:10px 24px;
+  font-size:.85em;
+  color:#8a5a1a;
+  background:#fff7ea;
+  border-bottom:1px solid #f2ddba;
+  text-align:center;
+}
+main{max-width:880px;margin:0 auto;padding:40px 24px 64px}
+h1{
+  margin:0 0 .5em;
+  font-size:1.85em;
+  line-height:1.45;
+  letter-spacing:.02em;
+  color:var(--blue-dark);
+  padding-bottom:.45em;
+  border-bottom:3px solid var(--blue);
+}
+h2{
+  margin:2.4em 0 .9em;
+  font-size:1.32em;
+  line-height:1.5;
+  color:var(--blue-dark);
+  padding-left:.55em;
+  border-left:4px solid var(--orange);
+  scroll-margin-top:20px;
+}
+p{margin:.75em 0}
+blockquote{
+  margin:1.3em 0;
+  padding:.75em 1.2em;
+  background:var(--soft);
+  border-left:4px solid var(--blue);
+  border-radius:0 8px 8px 0;
+  color:#3a4656;
+}
+blockquote p{margin:.3em 0}
+ul,ol{margin:.6em 0 1em;padding-left:1.7em}
+li{margin:.3em 0}
+li>ul,li>ol{margin:.2em 0 .35em}
+table{
+  display:block;
+  width:100%;
+  margin:1.3em 0;
+  border-collapse:collapse;
+  overflow-x:auto;
+  font-size:.94em;
+  line-height:1.75;
+}
+th,td{
+  border:1px solid var(--line);
+  padding:.5em .85em;
+  text-align:left;
+  vertical-align:top;
+}
+th{background:#eaf1f9;color:var(--blue-dark);white-space:nowrap}
+tbody tr:nth-child(even){background:#fafcfe}
+code{
+  font-family:Consolas,"Courier New",monospace;
+  font-size:.88em;
+  background:#eef2f7;
+  border:1px solid #e2e9f2;
+  border-radius:4px;
+  padding:.08em .35em;
+  word-break:break-all;
+}
+a{color:var(--blue)}
+a:hover{color:var(--orange)}
+.toc{
+  margin:1.8em 0 2.6em;
+  padding:1em 1.4em 1.1em;
+  background:var(--soft);
+  border:1px solid var(--line);
+  border-radius:8px;
+}
+.toc-title{font-weight:700;color:var(--blue-dark);margin-bottom:.35em}
+.toc ol{margin:.2em 0 0;padding-left:1.5em}
+.toc li{margin:.18em 0}
+.page-foot{
+  max-width:880px;
+  margin:0 auto;
+  padding:0 24px 40px;
+  font-size:.82em;
+  color:var(--muted);
+}
+@media (max-width:640px){
+  main{padding:28px 16px 48px}
+  h1{font-size:1.55em}
+  h2{font-size:1.18em}
+}
+</style>
+</head>
+<body>
+<div class="copy-note">阅读副本 · 生成于 2026-10-28 · 现行正文以 <code>docs/官网方案.md</code> 为准，源文件更新后需重新生成</div>
+<main>
+<h1 id="中数智算新官网方案草案">中数智算新官网方案（草案）</h1>
+<blockquote>
+<p>状态：草案。2026-10-27 起草，同日按“面向个人监理人、知识为本”的新定位改写第 2、3、6、8 节，其余内容待与用户继续讨论后定稿。正文只保留最新版本，历次变更原因记在根目录 <code>改动记录.md</code>。</p>
+</blockquote>
+<nav class="toc">
+<div class="toc-title">目录</div>
+<ol>
+<li><a href="#1-背景与目标">背景与目标</a></li>
+<li><a href="#2-定位文案第三稿">定位文案（第三稿）</a></li>
+<li><a href="#3-网站结构">网站结构</a></li>
+<li><a href="#4-免费下载栏目">免费下载栏目</a></li>
+<li><a href="#5-素材来源">素材来源</a></li>
+<li><a href="#6-对外口径红线上线前逐页核对">对外口径红线（上线前逐页核对）</a></li>
+<li><a href="#7-实施与验证讨论定稿后执行">实施与验证</a></li>
+<li><a href="#8-待讨论--待补充">待讨论 / 待补充</a></li>
+</ol>
+</nav>
+
+<h2 id="1-背景与目标">1. 背景与目标</h2>
+<p>老官网（2023–2024 年）按单个产品设栏目：咨筑云 5.0、小愚AI 监理工作助手、智算、智监理 SaaS、服务案例、新闻资讯、关于我们。服务对象主要是监理企业和主管部门。</p>
+<p>用户于 2026-10-27 确定了新方向：</p>
+<ol type="1">
+<li><strong>主攻个人用户</strong>，也就是一线监理人员。</li>
+<li><strong>知识数据为本。</strong> AI 编程会让软件人人可造，软件本身会被颠覆，只有治理好的行业知识数据才是护城河。因此保留“知识计算”这个底色。</li>
+</ol>
+<p>公司业务按三条线组织：行业知识治理、行业 AI 应用产品、行业人员 AI 启蒙。三条线都服务于上面两点：知识是核心，软件是知识的载体并免费开放，启蒙是教监理人用 AI、造工具。</p>
+<p><strong>已确认事项（2026-10-27）</strong></p>
+<ul>
+<li>老产品不再作为主力产品，放进发展历程。</li>
+<li>Sup 产品线以公司名义展示。</li>
+<li>网站做成纯静态网站，项目目录为 <code>D:\中数智算官网</code>，老站截图目录保持不动。</li>
+<li>已免费开放的两款软件单独设栏目，提供下载。</li>
+<li>主标语和“关于我们”按新定位重写。</li>
+</ul>
+<h2 id="2-定位文案第三稿">2. 定位文案（第三稿）</h2>
+<p><strong>待用户确认的三点，未确认前按推荐项写入：</strong></p>
+<ul>
+<li>主标语</li>
+<li>官网只写免费、暂不提收费</li>
+<li>在“关于我们”里用第一人称写创始人故事</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>项目</th>
+<th>文案</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>一句话定位</td>
+<td>中数智算专注监理行业的知识计算。我们把规范、经验和工作方法治理成 AI 用得上、出处查得到的知识数据；软件免费开放给每位监理人，并教会他们用 AI、造工具。</td>
+</tr>
+<tr>
+<td>主标语（待确认）</td>
+<td>让每位监理人，都有一个懂行的 AI</td>
+</tr>
+<tr>
+<td>副标语</td>
+<td>AI 回答的精度，跟着知识治理的精度走</td>
+</tr>
+<tr>
+<td>原则小字</td>
+<td>AI 出草稿，监理人做定论</td>
+</tr>
+<tr>
+<td>愿景</td>
+<td>建筑业知识计算领跑者（保留老站原文）</td>
+</tr>
+<tr>
+<td>使命</td>
+<td>给监理知识搬一次家，让每位监理人用上有依据的 AI</td>
+</tr>
+<tr>
+<td>价值观</td>
+<td>求真：知识有出处、有版本；开放：软件免费，方法公开；担当：AI 辅助，人负责</td>
+</tr>
+</tbody>
+</table>
+<p><strong>主标语其他候选（供讨论）</strong></p>
+<ul>
+<li>给监理知识搬个家</li>
+<li>软件免费，知识为本</li>
+<li>只有监理自己知道，监理软件该长什么样</li>
+</ul>
+<p><strong>知识资产的写法</strong></p>
+<p>只写“正在系统治理规范条文、监理工作方法、表单模板”，不公布具体数字。专业核对完成、授权确认之后再公布数字。</p>
+<p>内部参考（不对外）：规范原件约 18 万个文件，结构化后约 12 万条条文；监理树、事项、清单约 2.3 万条；工作方法 82 项任务、427 个步骤，目前全部是草稿。</p>
+<p><strong>关于我们：创始人故事（待确认，第一人称）</strong></p>
+<p>素材均出自 <code>D:\AIfnjl\AI赋能监理\raw\我的博客\</code> 下作者原文：</p>
+<ul>
+<li>监理出身，不是软件工程师，从没真正写过程序。</li>
+<li>以前做咨筑云，需要一个软件团队。2025 年开始借助 AI 编程，自己做监理软件。</li>
+<li>两年里从整理规范、搭建知识库做起，一路做到检索问答、工作流和监理智能体。</li>
+<li>由此得出判断：软件人人可造，监理知识才是根本。</li>
+</ul>
+<p>文中“20 年注册监理工程师”“老周 25 年总监”分别是提示词示例和故事人物，不能当作创始人履历使用。</p>
+<p><strong>理念金句（可选用）</strong></p>
+<ul>
+<li>“模型是很多人都能使用的。真正属于企业自己的资产，是那些被分类、校准、更新并形成关系的知识。”</li>
+<li>“只有监理自己知道，监理软件该长什么样。”</li>
+<li>“模型在云端，落地在现场。现场的路，只能有人一米一米地铺。”</li>
+</ul>
+<p><strong>发展历程</strong></p>
+<ul>
+<li>2023 年：咨筑云、智监理、智算等产品，使用项目 500+（老站数据）。</li>
+<li>2024 年：四川“双软认证”、9 项软著、小愚AI。</li>
+<li>2025 年：开始用 AI 编程自建监理软件与规范知识库。</li>
+<li>2026 年：免费开放监理工作AI辅助系统与建筑规范标准检索系统；推出 Sup 产品线；研发《监理人学AI编程》课程。</li>
+</ul>
+<h2 id="3-网站结构">3. 网站结构</h2>
+<p>面向一线监理人员，首页第一屏的行动入口是“免费下载”。</p>
+<table>
+<thead>
+<tr>
+<th>页面</th>
+<th>文件</th>
+<th>主要内容</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>首页</td>
+<td><code>index.html</code></td>
+<td>主标语与副标语；免费下载入口；三条业务线卡片（知识、产品、启蒙）；理念金句；最新 3 篇文章</td>
+</tr>
+<tr>
+<td>知识治理</td>
+<td><code>governance.html</code></td>
+<td>为什么知识是根本；版本与出处可追溯；分类树检索；提示词库三类（生成、审核、填报）；监理AI工作指南的任务框架。只讲方法和进展，不报数字</td>
+</tr>
+<tr>
+<td>AI 产品</td>
+<td><code>products.html</code></td>
+<td>Sup Copilot 2.0 个人版（即将免费开放）；Sup Autopilot（单机桌面内测）；监理IM（规划中，一句话带过）</td>
+</tr>
+<tr>
+<td>免费下载</td>
+<td><code>download.html</code></td>
+<td>两款已开放软件，详见第 4 节</td>
+</tr>
+<tr>
+<td>AI 启蒙与培训</td>
+<td><code>training.html</code></td>
+<td>L1–L4 能力模型；《监理用AI》图文课；《监理人学AI编程》30 课（课程研发中）；术语白话卡</td>
+</tr>
+<tr>
+<td>观点与资讯</td>
+<td><code>insights.html</code> + <code>articles/*.html</code></td>
+<td>9 篇精选文章；老站新闻改写为简讯</td>
+</tr>
+<tr>
+<td>关于我们</td>
+<td><code>about.html</code></td>
+<td>定位、愿景、使命、价值观；创始人故事；发展历程（含老产品）；联系方式</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><strong>导航顺序</strong>：首页 / 免费下载 / AI产品 / 知识治理 / AI启蒙 / 观点资讯 / 关于我们。</li>
+<li><strong>老产品处理</strong>：咨筑云、智监理、智算、小愚AI 不再单设栏目，放进“关于我们—发展历程”，每个产品配一张效果图和一句话。</li>
+<li><strong>视觉</strong>：沿用老站的蓝色主色加橙色强调色，页面需要适配手机。</li>
+</ul>
+<h2 id="4-免费下载栏目">4. 免费下载栏目</h2>
+<table>
+<thead>
+<tr>
+<th>软件</th>
+<th>当前版本</th>
+<th>一句话介绍</th>
+<th>下载页</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>监理工作AI辅助系统（Sup Copilot 1.0）</td>
+<td>v1.0.18，2026-05-28</td>
+<td>用 AI 起草监理文书、审核方案；提示词可按版本管理</td>
+<td><a href="https://gitee.com/tianhongyu001/jlgzaifzxt/releases/tag/v1.0.18">https://gitee.com/tianhongyu001/jlgzaifzxt/releases/tag/v1.0.18</a></td>
+</tr>
+<tr>
+<td>建筑规范标准检索系统（监理个人知识库）</td>
+<td>V1.3.4，2026-06-03</td>
+<td>导入规范，建个人知识库，问答结果可追溯到页码和条款</td>
+<td><a href="https://gitee.com/tianhongyu001/gfbzjsxt/releases/tag/V1.3.4">https://gitee.com/tianhongyu001/gfbzjsxt/releases/tag/V1.3.4</a></td>
+</tr>
+</tbody>
+</table>
+<p>每款软件写清以下内容：</p>
+<ul>
+<li>适用对象和主要功能。</li>
+<li>运行环境：Windows 桌面，需要自备大模型 API Key（调用 AI 模型的账号密钥），模型调用费由用户直接付给模型厂商。</li>
+<li>安装方法。</li>
+<li>提示：安装包暂无数字签名，系统可能提示“未知发布者”。</li>
+</ul>
+<p>其他约定：</p>
+<ul>
+<li>下载按钮链接到 Gitee 发布页，不直接链接 exe 文件，避免版本更新后链接失效。</li>
+<li>Gitee 发布页没有写开源协议，页面暂写“免费下载使用”。要写“开源”，需要用户先确认采用的协议。</li>
+<li>本机没有这两款软件的源码目录，只有说明笔记：<code>D:\AIfnjl\AI赋能监理\raw\我的软件\AI监理系统1x.md</code>、<code>建筑规范标准检索系统.md</code>。两篇相关公众号文章的原件不在本机。功能描述以 Gitee 页面和这两份笔记为准。</li>
+</ul>
+<h2 id="5-素材来源">5. 素材来源</h2>
+<p><strong>老站素材</strong>：<code>D:\中数智算官网截图\</code></p>
+<ul>
+<li>各栏目的 <code>文案.txt</code></li>
+<li>横幅、产品效果图、小愚机器人形象</li>
+<li>不拷贝 PSD 和原始大图</li>
+</ul>
+<p><strong>新内容</strong>：<code>D:\AIfnjl\</code></p>
+<ul>
+<li>产品线总纲：<code>产品线管理\Sup监理产品线\产品线总纲.md</code></li>
+<li>Copilot 2.0：
+<ul>
+<li>介绍：<code>业务产品\AI监理GA版-p1\docs\产品介绍-简版.md</code>、<code>docs\免费开放预热-项目详细介绍.md</code></li>
+<li>截图：<code>docs\assets\sup-copilot-personal\01–10</code></li>
+</ul></li>
+<li>Autopilot：<code>业务产品\jianli-agent\docs\产品介绍.md</code>、<code>docs\品牌说明.md</code></li>
+<li>知识治理：
+<ul>
+<li><code>产品线管理\Sup监理产品线\规范与专业知识治理及树形检索设计草案.md</code></li>
+<li><code>监理 AI 基础平台\监理AI工作指南\README.md</code></li>
+</ul></li>
+<li>理念：<code>AI赋能监理\raw\我的博客\AI最后一公里_知识治理与认知启蒙_定稿.md</code>、<code>AI时代监理工程师能力跃迁手册.md</code>、<code>从个人AI助手到机器人巡检_监理AI的六阶段演化.md</code></li>
+<li>课程：<code>监理人AI编程课程\课件\课程目录.html</code>、<code>术语白话卡.html</code></li>
+<li>9 篇精选文章（均在 <code>AI赋能监理\raw\我的博客\</code>）：
+<ul>
+<li>AI最后一公里</li>
+<li>六阶段演化</li>
+<li>全球建筑AI应用</li>
+<li>三部曲第三篇</li>
+<li>大白话：监理这行AI能干啥</li>
+<li>第01讲、第02讲、第10讲</li>
+<li>拦着监理用AI的六扇门</li>
+</ul></li>
+</ul>
+<p><strong>不进官网素材的旧文档</strong>（与新定位冲突或已作废）：</p>
+<ul>
+<li><code>业务产品\AI监理GA版-p1\docs\多端商业化-整体方案v1.md</code>：里面有“个人版 ¥29/月”“AI 是唯一的差异化”“400 用户”。</li>
+<li><code>产品形态架构-两轴模型.md</code>：个人版在线订阅。</li>
+<li>2.0 免费规格中的“主要商业客户为项目部和监理公司”。</li>
+</ul>
+<h2 id="6-对外口径红线上线前逐页核对">6. 对外口径红线（上线前逐页核对）</h2>
+<p><strong>产品状态</strong></p>
+<ul>
+<li>已免费开放的只有 1.0 和规范检索系统。</li>
+<li>Copilot 2.0 个人版只写“即将免费开放”，不写可下载。</li>
+<li>团队版、企业版不写。</li>
+<li>Autopilot 必须标“内测”。</li>
+<li>监理IM 只写“规划中”。</li>
+</ul>
+<p><strong>数字</strong></p>
+<ul>
+<li>不公布知识资产数字（条文数、任务数等）。</li>
+<li>不写“400 用户”“455 部规范”。</li>
+<li>交流会的 57 项是行业数据，不能说成本公司数据。</li>
+</ul>
+<p><strong>夸大与承诺</strong></p>
+<ul>
+<li>不写“不会瞎编”“权威”“一句话完成”“秒速”。</li>
+<li>不写“不上云、不经服务器”：使用 AI 时，内容会发送到用户自选的模型厂商。</li>
+</ul>
+<p><strong>授权</strong></p>
+<ul>
+<li>规范库、提示词库、模板在授权确认之前，不宣传“随软件分发”。</li>
+</ul>
+<p><strong>课程</strong></p>
+<ul>
+<li>不写“已开班”，不写学员成果。</li>
+</ul>
+<p><strong>责任边界</strong></p>
+<ul>
+<li>首页和产品页都要写明：AI 出草稿，监理人做定论；AI 不签字、不裁定。</li>
+</ul>
+<p><strong>文章版本</strong></p>
+<ul>
+<li>第07讲使用 <code>_去AI味</code> 版本。</li>
+<li>不引用 <code>L1_用AI_零基础第一步.md</code> 旧版。</li>
+</ul>
+<h2 id="7-实施与验证讨论定稿后执行">7. 实施与验证（讨论定稿后执行）</h2>
+<p><strong>实施步骤</strong></p>
+<ol type="1">
+<li>拷贝并压缩图片。</li>
+<li>写公共样式和页头页脚。</li>
+<li>依次完成各页面。</li>
+<li>用 <code>tools/build_articles.py</code> 把 md 文章转成 HTML。</li>
+<li>按第 6 节的红线逐页核对文案。</li>
+</ol>
+<p><strong>验证方法</strong></p>
+<ul>
+<li>在浏览器中分别用桌面 1440 宽、手机 390 宽逐页截图检查。</li>
+<li>检查内链和图片都能打开，手机宽度下没有横向滚动条。</li>
+<li>用关键词检索红线用语，确认没有出现。</li>
+</ul>
+<h2 id="8-待讨论--待补充">8. 待讨论 / 待补充</h2>
+<ul>
+<li>主标语定稿（第 2 节推荐项及候选）。</li>
+<li>收费口径：官网暂只写免费；如果以后推出付费的专业知识服务，再增设栏目。</li>
+<li>创始人故事能否用第一人称写，是否署名。</li>
+<li>联系电话、地址、邮箱、ICP 备案号、二维码。</li>
+<li>两款免费软件是否写“开源”，以及采用的协议。</li>
+<li>网站部署在哪里（现有服务器还是新主机），用什么域名。</li>
+<li>知识资产数字公布时机：专业核对和授权确认之后。</li>
+</ul>
+</main>
+<footer class="page-foot">本文档由 docs/官网方案.md 转换生成 · 2026-10-28</footer>
+</body>
+</html>
